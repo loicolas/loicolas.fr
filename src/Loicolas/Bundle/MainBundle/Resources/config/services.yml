@@ -1,0 +1,7 @@
+parameters:
+#    loicolas_main.example.class: Loicolas\Bundle\MainBundle\Example
+
+services:
+#    loicolas_main.example:
+#        class: %loicolas_main.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
