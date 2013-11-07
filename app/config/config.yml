@@ -1,10 +1,13 @@
 imports:
     - { resource: parameters.yml }
     - { resource: security.yml }
+    - { resource: sonata_news.yml }
+    - { resource: sonata_media.yml }
+    - { resource: sonata_formater.yml }
 
 framework:
     #esi:             ~
-    #translator:      { fallback: %locale% }
+    translator:      { fallback: %locale% }
     secret:          %secret%
     router:
         resource: "%kernel.root_dir%/config/routing.yml"
@@ -42,6 +45,8 @@ assetic:
 # Doctrine Configuration
 doctrine:
     dbal:
+        types:
+            json: Sonata\Doctrine\Types\JsonType
         driver:   %database_driver%
         host:     %database_host%
         port:     %database_port%
@@ -64,3 +69,39 @@ swiftmailer:
     username:  %mailer_user%
     password:  %mailer_password%
     spool:     { type: memory }
+
+# app/config/config.yml
+sonata_block:
+    default_contexts: [cms]
+    blocks:
+        # Enable the SonataAdminBundle block
+        sonata.admin.block.admin_list:
+            contexts:   [admin]
+        sonata.admin.block.search_result:
+            contexts:   [admin]
+        # Your other blocks
+        sonata.user.block.menu:
+        
+sonata_admin:
+    security:
+        handler: sonata.admin.security.handler.role
+        acl_user_manager: fos_user.user_manager # Name of the user manager service used to retrieve ACL users
+
+    options:
+        html5_validate: false # does not use html5 validation
+        confirm_exit:   false # disable confirmation when quitting with unsaved changes
+
+    # set to true to persist filter settings per admin module in the user's session
+    persist_filters: true
+    
+sonata_user:
+    security_acl: true
+    manager_type: orm # can be orm or mongodb
+    
+fos_user:
+    db_driver:      orm # can be orm or odm
+    firewall_name:  main
+    user_class:     Application\Sonata\UserBundle\Entity\User
+
+    group:
+        group_class: Application\Sonata\UserBundle\Entity\Group
