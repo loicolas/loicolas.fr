@@ -1,1 +1,14 @@
-Hello !
+{% extends '::base.html.twig' %}
+{% form_theme form 'LoicolasMainBundle:Default:fields.html.twig' %}
+{% block body %}
+<h2>Contactez-moi</h2>
+{{ form_start(form, {'action': path('loicolas_main_homepage')}  ) }}
+    {{ form_errors(form) }}
+
+    {{ form_row(form.firstname) }}
+    {{ form_row(form.name) }}
+    {{ form_row(form.company) }}
+    {{ form_row(form.email) }}
+    {{ form_row(form.message) }}
+{{ form_end(form) }}
+{% endblock %}

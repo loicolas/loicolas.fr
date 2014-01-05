@@ -1,3 +1,6 @@
 loicolas_main_homepage:
     pattern:  /
     defaults: { _controller: LoicolasMainBundle:Default:index }
+loicolas_main_contact_send:
+    pattern:  /contact/send
+    defaults: { _controller: LoicolasMainBundle:Default:contactSend }

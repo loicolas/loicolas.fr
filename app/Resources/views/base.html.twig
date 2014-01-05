@@ -1,13 +1,72 @@
 <!DOCTYPE html>
-<html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>       <html class="no-js"> <![endif]-->
     <head>
-        <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>{% block title %}Loïc Colas{% endblock %}</title>
+        
+        <meta property="fb:admins" content="1009745838" />
+        <meta property="og:description" content="Loïc Colas - Responsive web developer" />
+        <meta property="og:image" content="{{asset('bundles/loicolasmain/images/logo.png')}}" />
+        <meta property="og:title" content="Loïc Colas - Responsive web developer" />
+        <meta property="og:url" content="http://www.loicolas.fr" />
+        
+        <meta name="description" content="Loïc Colas - Responsive web developer for Backend and Frontend development and team leading">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        {% block stylesheets %}
+            <link href='http://fonts.googleapis.com/css?family=Merriweather:400,700,400italic,700italic,900italic,900,300italic,300|Oswald:400,300,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+            <link rel="stylesheet" href="{{asset('bundles/loicolasmain/css/normalize.min.css')}}">
+            <link rel="stylesheet" href="{{asset('bundles/loicolasmain/css/main.css')}}">
+        {% endblock %}               
+        <script src="{{asset('bundles/loicolasmain/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js')}}"></script>
     </head>
     <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+            <article class="wrapper">
+                <div class="presentation" itemscope itemtype="http://schema.org/Person">
+                    <header role="banner" class="main-header">
+                        <div class="logo">
+                            <a href="{{url('loicolas_main_homepage')}}">
+                                <img src="{{asset('bundles/loicolasmain/images/logo.png')}}" alt="Loïc Colas" itemprop="image" />
+                            </a>                            
+                        </div>               
+                        <h1 itemprop="name">Loïc Colas</h1>
+                        <h2 itemprop="jobTitle">Responsive Web Developer</h2>
+                        <ul class="skills" itemprop="description">
+                            <li class="icon-eyedropper"><span>Frontend developer</span></li>
+                            <li class="icon-cog"><span>Backend developer</span></li>
+                            <li class="icon-group"><span>Team leader</span></li>
+                        </ul>       
+                    </header>
+                </div>
+                <div class="main" role="main">
+                    {% block body %}{% endblock %}
+                </div>
+            </article>
+            <footer class="main-footer" role="contentinfo">
+                <ul>
+                    <li class="icon"><a href="https://github.com/loicolas" class="icon-github" target="_blank"><span>Loïc Colas - Github</span></a></li>
+                    <li class="icon"><a href="http://www.linkedin.com/pub/loïc-colas/40/57b/bb7" class="icon-linkedin" target="_blank"><span>Loïc Colas - Linked in</span></a></li>
+                    <li class="text"><a href="#">CV</a></li>
+                    <li class="text"><a href="{{url('loicolas_main_homepage')}}"><img src="{{asset('bundles/loicolasmain/images/logo-mini.png')}}" alt="Loïc Colas" /></a></li>
+                </ul>
+            </footer>
+        <div class="background"></div>
+        {% block javascripts %}
+            <script src="{{asset('bundles/loicolasmain/js/vendor/jquery-1.10.1.min.js')}}"></script>
+            <script src="{{asset('bundles/loicolasmain/js/main.js')}}"></script>
+        {% endblock %}
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+                ga('create', 'UA-46837152-1', 'loicolas.fr');
+                ga('send', 'pageview');
+
+              </script>       
     </body>
 </html>
