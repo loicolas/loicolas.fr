@@ -1,0 +1,10 @@
+{% extends '::base.html.twig' %}
+{% block body_class %}page_error{% endblock %}
+{% block intro %}
+<h2 class=" intro error-number">4<img src="{{asset('bundles/loicolasmain/images/logo-mini.png')}}" alt="" />4</h2>
+{% endblock %}
+{% block body %}
+<h2>Page non trouvée</h2>
+<p>La page demandée n'existe pas.</p>
+<p><a href="{{url('loicolas_main_homepage')}}">Retour à l'accueil</a></p>
+{% endblock %}

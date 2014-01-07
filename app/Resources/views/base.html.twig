@@ -23,7 +23,7 @@
         {% endblock %}               
         <script src="{{asset('bundles/loicolasmain/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js')}}"></script>
     </head>
-    <body>
+    <body class="{% block body_class %}{% endblock %}">
             <article class="wrapper">
                 <div class="presentation" itemscope itemtype="http://schema.org/Person">
                     <header role="banner" class="main-header">
@@ -34,14 +34,16 @@
                         </div>               
                         <h1 itemprop="name">Loïc Colas</h1>
                         <h2 itemprop="jobTitle">Responsive Web Developer</h2>
-                        <ul class="skills" itemprop="description">
+                    </header>  
+                </div>
+                <div class="main" role="main">
+                    {% block intro %}
+                        <ul class="intro skills" itemprop="description">
                             <li class="icon-eyedropper"><span>Frontend developer</span></li>
                             <li class="icon-cog"><span>Backend developer</span></li>
                             <li class="icon-group"><span>Team leader</span></li>
-                        </ul>       
-                    </header>
-                </div>
-                <div class="main" role="main">
+                        </ul>   
+                    {% endblock %}
                     {% block body %}{% endblock %}
                 </div>
             </article>

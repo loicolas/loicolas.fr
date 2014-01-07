@@ -1,0 +1,9 @@
+{% extends '::base.html.twig' %}
+{% block body_class %}page_error{% endblock %}
+{% block intro %}{% endblock %}
+{% block body %}
+<h2>Une erreur est survenue: {{ status_text }}</h2>
+<p>Le serveur a retourné une erreur "{{ status_code }} {{ status_text }}".</p>
+<p>Vous pouvez me contacter par le <a href="{{url('loicolas_main_homepage')}}">formulaire de contact</a> afin de m'aider à régler ce problème</p>
+<p><a href="{{url('loicolas_main_homepage')}}">Retour à l'accueil</a></p>
+{% endblock %}

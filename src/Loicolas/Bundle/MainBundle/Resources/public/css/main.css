@@ -150,13 +150,22 @@ h2 {font-size: 2.1em; font-style:italic;}
                 -o-transition: margin 1s ease;
                 transition: margin 1s ease; 
 }
-
+.main-header { margin-bottom: 10px; padding-bottom: 10px; border-bottom: 2px solid #fff;  }
 .logo { margin-bottom: 10px; }
-.main {  margin-top: 40px; text-align: left; }
-.main h2 {text-align: center;}
+.page_error .logo {  -webkit-transform: rotate(180deg);
+                    -moz-transform: rotate(180deg);
+                    -o-transform: rotate(180deg);
+                    transform: rotate(180deg); 
+}
+.main {  margin-top: 20px; text-align: left; }
+.main h2 {text-align: center;  }
+.main a:hover { text-decoration:none; }
 
-.skills { list-style-type: none; width: 100%; margin: 10px 0px 0px; padding: 20px 0px 0px; border: 0px solid #fff; border-width: 2px 0px; }
+.intro { width: 100%; margin-bottom: 40px; padding-bottom: 20px; border: 0px solid #fff; border-width: 0px 0px 2px; text-align: center; }
+.error-number { font-size: 3em; }
+.skills { list-style-type: none; }
 .skills li { width: 45%; display: inline-block; padding: 0px 5px 20px; }
+.skills li:last-child { padding: 0px 5px 0px; }
 
 .skills li:before { display:block; font-size: 2.5em; margin-bottom: 5px; 
                  -webkit-transition: all 1s ease;
