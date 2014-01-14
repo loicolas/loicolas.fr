@@ -1,0 +1,10 @@
+services:
+    sonata.admin.contact:
+        class: Loicolas\Bundle\MainBundle\Admin\ContactAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Contact", label: "Contact" }
+        arguments:
+            - ~
+            - Loicolas\Bundle\MainBundle\Entity\Contact
+            - ~
+
