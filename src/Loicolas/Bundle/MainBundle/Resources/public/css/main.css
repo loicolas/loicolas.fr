@@ -41,6 +41,9 @@
 .icon-in:after {
 	content: "\e605";
 }
+.icon-loicolas:before {
+	content: "\e606";
+}
 /* switching box model for all elements */
 * {
         -webkit-box-sizing: border-box;
@@ -142,6 +145,7 @@ h2 {font-size: 2.1em; font-style:italic;}
 .main-footer .icon span {text-indent:-9999px; }
 .main-footer [class^="icon-"]:before, .main-footer[class*=" icon-"]:before { font-size: 2.5em; }
 
+.main-footer .icon-loicolas:before { font-size: 3em; } 
 .main, 
 .presentation { width: 100%; max-width: 560px;  padding: 0px 5px;  text-align: center; 
                 -webkit-transition: margin 1s ease;
@@ -151,7 +155,11 @@ h2 {font-size: 2.1em; font-style:italic;}
                 transition: margin 1s ease; 
 }
 .main-header { margin-bottom: 10px; padding-bottom: 10px; border-bottom: 2px solid #fff;  }
-.logo { margin-bottom: 10px; }
+.logo { margin-bottom: 10px; height: 176px; }
+.logo a { text-decoration:none; }
+.logo .icon-loicolas { font-size: 11em; }
+.logo .icon-loicolas:before { width: 100%; display: inline-block; }
+.logo span { display: inline-block; text-indent: -9999px; }
 .page_error .logo {  -webkit-transform: rotate(180deg);
                     -moz-transform: rotate(180deg);
                     -o-transform: rotate(180deg);

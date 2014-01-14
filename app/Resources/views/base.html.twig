@@ -27,9 +27,11 @@
             <article class="wrapper">
                 <div class="presentation" itemscope itemtype="http://schema.org/Person">
                     <header role="banner" class="main-header">
-                        <div class="logo">
-                            <a href="{{url('loicolas_main_homepage')}}">
-                                <img src="{{asset('bundles/loicolasmain/images/logo.png')}}" alt="Loïc Colas" itemprop="image" />
+                        <div class="logo" class="ir">
+                            <a href="{{url('loicolas_main_homepage')}}" class="icon-loicolas">
+                                <span>
+                                    <img src="{{asset('bundles/loicolasmain/images/logo.png')}}" class="ir" alt="Loïc Colas" itemprop="image" />
+                                </span>
                             </a>                            
                         </div>               
                         <h1 itemprop="name">Loïc Colas</h1>
@@ -52,7 +54,7 @@
                     <li class="icon"><a href="https://github.com/loicolas" class="icon-github" target="_blank"><span>Loïc Colas - Github</span></a></li>
                     <li class="icon"><a href="http://www.linkedin.com/pub/loïc-colas/40/57b/bb7" class="icon-linkedin" target="_blank"><span>Loïc Colas - Linked in</span></a></li>
                     <li class="text"><a href="#">CV</a></li>
-                    <li class="text"><a href="{{url('loicolas_main_homepage')}}"><img src="{{asset('bundles/loicolasmain/images/logo-mini.png')}}" alt="Loïc Colas" /></a></li>
+                    <li class="icon"><a href="{{url('loicolas_main_homepage')}}" class="icon-loicolas"><span>Loïc Colas</span></a></li>
                 </ul>
             </footer>
         <div class="background"></div>
