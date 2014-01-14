@@ -84,6 +84,9 @@ sonata_block:
         sonata.user.block.menu:
         
 sonata_admin:
+    title:      Loicolas
+    title_logo: bundles/loicolasmain/images/logo-admin.png
+    
     security:
         handler: sonata.admin.security.handler.role
         acl_user_manager: fos_user.user_manager # Name of the user manager service used to retrieve ACL users
