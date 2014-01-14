@@ -19,6 +19,7 @@ class ContactAdmin extends Admin
             ->add('email', 'text', array('label' => 'Email'))
             ->add('company', 'text', array('label' => 'Société'))
             ->add('message') 
+            ->add('created', null, array('label' => 'Date')) 
         ;
     }
 
@@ -26,10 +27,11 @@ class ContactAdmin extends Admin
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
         $datagridMapper
-            ->add('firstname')
-            ->add('name')
-            ->add('company')
-            ->add('email')
+            ->add('firstname', null, array('label'=>'Prénom'))
+            ->add('name', null, array('label'=>'Nom'))
+            ->add('company', null, array('label'=>'Société'))
+            ->add('email', null, array('label'=>'Email'))
+            ->add('created', null, array('label'=>'Date'))
         ;
     }
 
@@ -37,10 +39,11 @@ class ContactAdmin extends Admin
     protected function configureListFields(ListMapper $listMapper)
     {
         $listMapper
-            ->addIdentifier('firstname')
-            ->addIdentifier('name')
-            ->add('company')
-            ->add('email')
+            ->addIdentifier('firstname', null, array('label'=>'Prénom'))
+            ->addIdentifier('name', null, array('label'=>'Nom'))
+            ->add('company', null, array('label'=>'Société'))
+            ->add('email', null, array('label'=>'Email'))
+            ->add('created', null, array('label'=>'Date'))
         ;
     }
 }

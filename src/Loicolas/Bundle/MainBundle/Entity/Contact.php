@@ -3,6 +3,7 @@
 namespace Loicolas\Bundle\MainBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Gedmo\Mapping\Annotation as Gedmo;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
@@ -64,6 +65,14 @@ class Contact
      * @Assert\NotBlank()
      */
     private $message;
+    
+     /**
+     * @var datetime $created
+     *
+     * @Gedmo\Timestampable(on="create")
+     * @ORM\Column(type="datetime")
+     */
+    private $created;
     
     /**
      * @var string
@@ -195,6 +204,11 @@ class Contact
     public function getMessage()
     {
         return $this->message;
+    }
+    
+    public function getCreated()
+    {
+        return $this->created;
     }
     
     /**
