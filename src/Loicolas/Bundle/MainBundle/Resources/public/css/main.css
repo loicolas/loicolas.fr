@@ -171,6 +171,8 @@ h2 {font-size: 2.1em; font-style:italic;}
 
 .intro { width: 100%; margin-bottom: 40px; padding-bottom: 20px; border: 0px solid #fff; border-width: 0px 0px 2px; text-align: center; }
 .error-number { font-size: 3em; }
+.error-number span.icon-loicolas:before { display:inline-block; vertical-align: middle; padding-left: 5px; }
+.error-number span span { display:inline-block; text-indent: -9999px;; }
 .skills { list-style-type: none; }
 .skills li { width: 45%; display: inline-block; padding: 0px 5px 20px; }
 .skills li:last-child { padding: 0px 5px 0px; }
