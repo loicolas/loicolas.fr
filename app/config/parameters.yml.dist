@@ -13,3 +13,10 @@ parameters:
 
     locale:            en
     secret:            ThisTokenIsNotSoSecretChangeIt
+    assets_version: V1
+    
+    # Bin
+    node_path:        [/usr/lib/nodejs]
+    nodejs_bin:        /usr/bin/nodejs
+    uglifycss_bin:     /usr/local/bin/uglifycss
+    uglifyjs_bin:      /usr/local/bin/uglifyjs

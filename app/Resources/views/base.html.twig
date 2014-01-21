@@ -19,8 +19,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         {% block stylesheets %}
             <link href='http://fonts.googleapis.com/css?family=Merriweather:400,700,400italic,700italic,900italic,900,300italic,300|Oswald:400,300,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
-            <link rel="stylesheet" href="{{asset('bundles/loicolasmain/css/normalize.min.css')}}">
-            <link rel="stylesheet" href="{{asset('bundles/loicolasmain/css/main.css')}}">
+            {% stylesheets 
+                            'bundles/loicolasmain/css/normalize.min.css' 
+                            'bundles/loicolasmain/css/main.css' filter='?uglifycss,cssrewrite' %}
+                    <link rel="stylesheet" href="{{ asset_url }}" />
+            {% endstylesheets %}
+            
         {% endblock %}               
         <script src="{{asset('bundles/loicolasmain/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js')}}"></script>
     </head>
@@ -60,8 +64,6 @@
             </footer>
         <div class="background"></div>
         {% block javascripts %}
-            <script src="{{asset('bundles/loicolasmain/js/vendor/jquery-1.10.1.min.js')}}"></script>
-            <script src="{{asset('bundles/loicolasmain/js/main.js')}}"></script>
         {% endblock %}
         <script>
             (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
