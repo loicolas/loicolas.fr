@@ -1,6 +1,25 @@
-{% extends '::base.html.twig' %}
+{% extends 'LoicolasMainBundle::layout.html.twig' %}
 {% form_theme form 'LoicolasMainBundle:Default:fields.html.twig' %}
+{% block body_class %}front{% endblock %}
 {% block body %}
+<article class="presentation" itemscope itemtype="http://schema.org/Person">
+     <div class="logo" class="ir">
+        <a href="{{url('loicolas_main_homepage')}}" class="icon-loicolas">
+            <span>
+                <img src="{{asset('bundles/loicolasmain/images/logo.png')}}" class="ir" alt="Loïc Colas" itemprop="image" />
+            </span>
+        </a>                            
+    </div>               
+    <h1 itemprop="name">Loïc Colas</h1>
+    <h2 itemprop="jobTitle">Responsive Web Developer</h2>
+    
+    <ul class="intro skills" itemprop="description">
+        <li class="icon-eyedropper"><span>Frontend developer</span></li>
+        <li class="icon-group"><span>Team leader</span></li>
+        <li class="icon-cog"><span>Backend developer</span></li>
+    </ul>  
+</article>
+{#
 <h2>Contactez-moi</h2>
 {{ form_start(form, {'action': path('loicolas_main_homepage')}  ) }}
     {{ form_errors(form) }}
@@ -11,4 +30,5 @@
     {{ form_row(form.email) }}
     {{ form_row(form.message) }}
 {{ form_end(form) }}
+#}
 {% endblock %}

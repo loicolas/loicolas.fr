@@ -30,6 +30,29 @@
         <script src="{{asset('bundles/loicolasmain/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js')}}"></script>
     </head>
     <body class="{% block body_class %}{% endblock %}">
+        <header  role="banner" class="main-header">
+            <div class="inner">
+                <nav role="navigation" class="main-navigation">
+                    <ul>
+                        <li class="icon"><a href="{{ path('loicolas_main_homepage') }}" class="icon-loicolas"><span class="visuallyhidden">Loïc Colas</span></a></li>
+                        <li class="icon"><a href="{{ path('loicolas_main_homepage') }}" class="icon-loicolas"><span class="visuallyhidden">Loïc Colas</span></a></li>
+                    </ul>
+                </nav>
+                <ul class="external">
+                        <li class="icon"><a href="https://github.com/loicolas" class="icon-github" target="_blank"><span class="visuallyhidden">Loïc Colas - Github</span></a></li>
+                        <li class="icon"><a href="http://www.linkedin.com/pub/loïc-colas/40/57b/bb7" class="icon-linkedin" target="_blank"><span class="visuallyhidden">Loïc Colas - Linked in</span></a></li>
+                        <li class="text"><a href="{{asset('uploads/CV_Loic_Colas.pdf')}}" target="_blank">CV</a></li>
+                </ul>
+            </div>
+            
+        </header>
+        <div id="content" class="content">
+            <div class="main" role="main">
+                {% block body %}{% endblock %}    
+            </div>            
+        </div>
+        
+            {#
             <article class="wrapper">
                 <div class="presentation" itemscope itemtype="http://schema.org/Person">
                     <header role="banner" class="main-header">
@@ -55,15 +78,13 @@
                     {% block body %}{% endblock %}
                 </div>
             </article>
-            <footer class="main-footer" role="contentinfo">
-                <ul>
-                    <li class="icon"><a href="https://github.com/loicolas" class="icon-github" target="_blank"><span class="visuallyhidden">Loïc Colas - Github</span></a></li>
-                    <li class="icon"><a href="http://www.linkedin.com/pub/loïc-colas/40/57b/bb7" class="icon-linkedin" target="_blank"><span class="visuallyhidden">Loïc Colas - Linked in</span></a></li>
-                    <li class="text"><a href="{{asset('uploads/CV_Loic_Colas.pdf')}}" target="_blank">CV</a></li>
-                </ul>
-            </footer>
-        <div class="background"></div>
+            #}
         {% block javascripts %}
+            {% javascripts 
+                            'bundles/loicolasmain/js/vendor/jquery-1.10.1.min.js'
+                            'bundles/loicolasmain/js/main.js'  %}
+                    <script src="{{ asset_url }}"></script>
+            {% endjavascripts %}
         {% endblock %}
         <script>
             (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
