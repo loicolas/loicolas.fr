@@ -35,7 +35,16 @@
                 <nav role="navigation" class="main-navigation">
                     <ul>
                         <li class="icon"><a href="{{ path('loicolas_main_homepage') }}" class="icon-loicolas"><span class="visuallyhidden">Loïc Colas</span></a></li>
-                        <li class="icon"><a href="{{ path('loicolas_main_homepage') }}" class="icon-loicolas"><span class="visuallyhidden">Loïc Colas</span></a></li>
+                        <li class="icon">
+                            <a href="{{ path('loicolas_main_homepage') }}" id="menu-opener" class="icon-menu menu-opener"><span><span class="visuallyhidden">Loïc Colas</span></span></a>
+                            <div class="second-level">
+                                <ul>
+                                    <li><a href="{{path('loicolas_main_experience')}}">Expérimenté</a></li>
+                                    <li><a href="{{path('loicolas_main_experience')}}">Expérimenté</a></li>
+                                    <li><a href="{{path('loicolas_main_experience')}}">Expérimenté</a></li>
+                                </ul>
+                            </div>
+                        </li>
                     </ul>
                 </nav>
                 <ul class="external">

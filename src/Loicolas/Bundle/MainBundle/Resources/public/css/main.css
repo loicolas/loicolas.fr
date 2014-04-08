@@ -113,7 +113,7 @@ textarea {
     padding: 0.2em 0;
 }
 
-body { font-size: 16px; padding-bottom: 100px; font-family: 'Merriweather', serif; background-color: #fff; }
+body { font-size: 16px; padding-bottom: 100px; font-family: 'Merriweather', serif; background-color: #000; }
 
 .wrapper { position: relative; width: 90%; margin: 0px auto; overflow: hidden;}
 body>.wrapper { margin-top: 5%; z-index:2; }
@@ -197,6 +197,7 @@ h2 {font-size: 2.1em; font-style:italic;}
     transition: background-color 0.5s ease; 
 }
 
+.menu-open .main-header a.menu-opener,
 .main-header a:hover {
     background-color: #2572a8;
 }
@@ -230,18 +231,191 @@ h2 {font-size: 2.1em; font-style:italic;}
     margin-right: 1px;
 }
 
+.main-navigation .menu-opener  {
+    position: relative;
+} 
+
+.main-navigation .menu-opener>span:before,
+.main-navigation .menu-opener:before,
+.main-navigation .menu-opener:after {
+    content: ' ';
+    display: block;
+    position: absolute;
+    left: 19px;
+    width: 25px;
+    border: 0px solid #fff;
+    border-width: 5px 0px 0px;
+    
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease; 
+}
+    
+.main-navigation .menu-opener:before  {    
+    top: 18px;   
+} 
+
+.main-navigation .menu-opener:after {
+    top: 38px;
+} 
+
+
+.csstransforms .menu-open .main-navigation .menu-opener:after,
+.csstransforms .menu-open .main-navigation .menu-opener:before{
+    width: 40px;
+    left: 11px;
+}
+
+.csstransforms .menu-open .main-navigation .menu-opener:before{
+    top: 28px;
+    -webkit-transform: rotateZ(45deg);
+    -moz-transform: rotateZ(45deg);
+    -ms-transform: rotateZ(45deg);
+    -o-transform: rotateZ(45deg);
+    transform: rotateZ(45deg);
+}
+
+.csstransforms  .menu-open .main-navigation .menu-opener:after{
+    top: 29px;
+    -webkit-transform: rotateZ(-45deg);
+    -moz-transform: rotateZ(-45deg);
+    -ms-transform: rotateZ(-45deg);
+    -o-transform: rotateZ(-45deg);
+    transform: rotateZ(-45deg);
+}
+
+.main-navigation .menu-opener>span:before {
+    top: 28px;
+} 
+
+.csstransforms  .menu-open  .main-navigation .menu-opener>span:before {
+    top: 28px;
+    -webkit-transform: rotateY(90deg);
+    -moz-transform: rotateY(90deg);
+    -ms-transform: rotateY(90deg);
+    -o-transform: rotateY(90deg);
+    transform: rotateY(90deg);
+} 
+
+.main-navigation .second-level{
+    position: fixed;
+    top: 63px;
+    left: 0px;
+
+    height: 0;
+    width: 100%; 
+    
+    overflow:hidden;
+    
+    -webkit-transition: height 0.5s ease;
+    -moz-transition: height 0.5s ease;
+    -ms-transition: height 0.5s ease;
+    -o-transition: height 0.5s ease;
+    transition: height 0.5s ease; 
+}
+    
+.main-navigation .second-level ul{
+    display: block;
+    position: absolute;
+    left: 0px;
+    background-color: rgba(36, 132, 198, 0.8);
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+}
+
+.menu-open .main-navigation .second-level{
+    height: 100%;
+}
+
+.menu-open .main-navigation .second-level ul{
+    z-index: 99;
+}
+
+
+.csstransforms .main-navigation .second-level ul{
+    -webkit-transform: perspective(400px) rotateX(-90deg);
+    -moz-transform: perspective(400px) rotateX(-90deg);
+    -ms-transform: perspective(400px) rotateX(-90deg);
+    -o-transform: perspective(400px) rotateX(-90deg);
+    transform: perspective(400px) rotateX(-90deg);
+    
+    -webkit-transform-origin: top center;
+    -moz-transform-origin: top center;
+    -ms-transform-origin: top center;
+    -o-transform-origin: top center;
+    transform-origin: top center;
+    
+    transform-style: preserve-3d;
+    
+    -webkit-transition: -webkit-transform 0.5s ease;
+    -moz-transition: -moz-transform 0.5s ease;
+    -ms-transition: -ms-transform 0.5s ease;
+    -o-transition: -o-transform 0.5s ease;
+    transition: transform 0.5s ease; 
+}
+
+.csstransforms .menu-open .main-navigation .second-level ul{
+    -webkit-transform: perspective(400px)  rotateX(0deg);
+    -moz-transform: perspective(400px)  rotateX(0deg);
+    -ms-transform: perspective(400px)  rotateX(0deg);
+    -o-transform: perspective(400px)  rotateX(0deg);
+    transform: perspective(400px) rotateX(0deg);
+}
+
 .main-header [class^="icon-loicolas"]:before {
     font-size: 3.9em;
 }
 
 
 .content{
+    position:relative;
     width: 100%;
     background-image: url('../images/background.jpg');
     background-position: center top;
     background-size: cover;
     background-repeat: no-repeat;
+    background-attachment: fixed;
+    z-index: 90;
+     
+
+    
 }
+
+.csstransforms .content {
+    -webkit-transform: perspective(400px) rotateX(0deg) scale(1);
+    -moz-transform: perspective(400px) rotateX(0deg) scale(1);
+    -ms-transform: perspective(400px) rotateX(0deg) scale(1);
+    -o-transform: perspective(400px) rotateX(0deg) scale(1);
+    transform: perspective(400px) rotateX(0deg) scale(1);
+    
+    -webkit-transform-origin: bottom center;
+    -moz-transform-origin: bottom center;
+    -ms-transform-origin: bottom center;
+    -o-transform-origin: bottom center;
+    transform-origin: bottom center;
+    
+    transform-style: preserve-3d;
+    
+    -webkit-transition: -webkit-transform 0.5s ease;
+    -moz-transition: -moz-transform 0.5s ease,;
+    -ms-transition: -ms-transform 0.5s ease;
+    -o-transition: -o-transform 0.5s ease;
+    transition: transform 0.5s ease; 
+}
+
+
+
+.csstransforms .menu-open .content {
+    -webkit-transform: perspective(200px) rotateX(20deg) scale(0.9);
+    -moz-transform: perspective(200px) rotateX(20deg) scale(0.9);
+    -ms-transform: perspective(400px) rotateX(20deg) scale(0.9);
+    -o-transform: perspective(400px) rotateX(20deg) scale(0.9);
+    transform: perspective(200px) rotateX(20deg) scale(0.9);
+}
+
 
 .main {
     width: 100%;
