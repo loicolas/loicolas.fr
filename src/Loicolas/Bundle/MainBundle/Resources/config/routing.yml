@@ -4,6 +4,12 @@ loicolas_main_homepage:
 loicolas_main_experience:
     pattern:  /experience
     defaults: { _controller: LoicolasMainBundle:Default:experience }
+loicolas_main_blog:
+    pattern:  /blog
+    defaults: { _controller: LoicolasMainBundle:Default:experience }
+loicolas_main_contact:
+    pattern:  /contact
+    defaults: { _controller: LoicolasMainBundle:Default:experience }
 loicolas_main_contact_send:
     pattern:  /contact/send
     defaults: { _controller: LoicolasMainBundle:Default:contactSend }
