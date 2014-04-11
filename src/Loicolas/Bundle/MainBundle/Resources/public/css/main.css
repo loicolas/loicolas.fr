@@ -553,10 +553,30 @@ h2 {font-size: 2.1em; font-style:italic;}
         border: 0px solid #fff;
         -moz-border-radius: 50%;
         border-radius: 50%; 
+        
+        background-color: transparent;
+        -webkit-box-shadow: inset 0 0 0 188px white;
+        -moz-box-shadow: inset 0 0 0 188px white;
+        -ms-box-shadow: inset 0 0 0 188px white;
+        -o-box-shadow: inset 0 0 0 188px white;
+        box-shadow: inset 0 0 0 188px white;
+    }
+    
+    .no-boxshadow .main-navigation .second-level a {
+        background-color: #fff;
     }
     
     .main-navigation .second-level a:hover {
-        border-width: 16px ;
+        -webkit-box-shadow: inset 0 0 0 16px white;
+        -moz-box-shadow: inset 0 0 0 16px white;
+        -ms-box-shadow: inset 0 0 0 16px white;
+        -o-box-shadow: inset 0 0 0 16px white;
+        box-shadow: inset 0 0 0 16px white;
+    }
+    
+    .no-boxshadow .main-navigation .second-level a:hover {
+        border-width: 16px;
+        background-color: transparent;
     }
     
     .content{
@@ -656,9 +676,18 @@ h2 {font-size: 2.1em; font-style:italic;}
         line-height: 65px;
     }
     
-    .main-navigation .second-level a:hover {
-        border-width: 30px ;
+    .no-boxshadow .main-navigation .second-level a:hover {
+        border-width: 30px
     }
+    .main-navigation .second-level a:hover {
+        -webkit-box-shadow: inset 0 0 0 30px white;
+        -moz-box-shadow: inset 0 0 0 30px white;
+        -ms-box-shadow: inset 0 0 0 30px white;
+        -o-box-shadow: inset 0 0 0 30px white;
+        box-shadow: inset 0 0 0 30px white;
+    }
+    
+    
     
     .main-header .second-level [class^="icon-"]:before {
         font-size: 6em;
