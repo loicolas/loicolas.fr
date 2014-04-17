@@ -436,6 +436,8 @@ h2 {font-size: 2.1em; font-style:italic;}
     font-family: sans-serif;
 }
 
+html[data-platform*='iPhone'][data-useragent*='Safari'] .see-more:before,
+html[data-platform*='iPad'][data-useragent*='Safari'] .see-more:before,
 html[data-platform*='MacIntel'][data-useragent*='Safari'] .see-more:before {
     line-height: 75px;
 }
