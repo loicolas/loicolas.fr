@@ -27,6 +27,12 @@
             {% endstylesheets %}
             
         {% endblock %}               
+        <script>
+            var b = document.documentElement;
+              b.setAttribute('data-useragent',  navigator.userAgent);
+              b.setAttribute('data-platform', navigator.platform );
+              b.className += ((!!('ontouchstart' in window) || !!('onmsgesturechange' in window))?' touch':'');
+        </script>
         <script src="{{asset('bundles/loicolasmain/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js')}}"></script>
     </head>
     <body class="{% block body_class %}{% endblock %}">
