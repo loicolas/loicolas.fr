@@ -1,5 +1,4 @@
 {% extends 'LoicolasMainBundle::layout.html.twig' %}
-{% form_theme form 'LoicolasMainBundle:Default:fields.html.twig' %}
 {% block body_class %}front{% endblock %}
 {% block body %}
 <article class="presentation" itemscope itemtype="http://schema.org/Person">
@@ -21,16 +20,4 @@
     
     <a href="{{path('loicolas_main_experience')}}" class="see-more" ><span class="ir">Voir mon expérince professionnelle</span></a>
 </article>
-{#
-<h2>Contactez-moi</h2>
-{{ form_start(form, {'action': path('loicolas_main_homepage')}  ) }}
-    {{ form_errors(form) }}
-
-    {{ form_row(form.firstname) }}
-    {{ form_row(form.name) }}
-    {{ form_row(form.company) }}
-    {{ form_row(form.email) }}
-    {{ form_row(form.message) }}
-{{ form_end(form) }}
-#}
 {% endblock %}

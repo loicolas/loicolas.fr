@@ -409,11 +409,11 @@ h2 {font-size: 2.1em; font-style:italic;}
     color: #fff;
     background-color: #2484c6;
     
-    -webkit-transition: color 0.5s ease, background-color 0.5s ease;
-    -moz-transition: color 0.5s ease, background-color 0.5s ease;
-    -ms-transition: color 0.5s ease, background-color 0.5s ease;
-    -o-transition: color 0.5s ease, background-color 0.5s ease;
-    transition: color 0.5s ease, background-color 0.5s ease; 
+    -webkit-transition: color 1s ease, background-color 1s ease;
+    -moz-transition: color 1s ease, background-color 1s ease;
+    -ms-transition: color 1s ease, background-color 1s ease;
+    -o-transition: color 1s ease, background-color 1s ease;
+    transition: color 1s ease, background-color 1s ease; 
 }
 
 .see-more:hover{
@@ -515,6 +515,67 @@ html[data-platform*='MacIntel'][data-useragent*='Safari'] .see-more:before {
     -o-transform: scale(1.2);
     transform: scale(1.2);
 }
+
+/** FORM **/
+.contact-form { margin: 40px auto 40px;  width: 480px; text-align:left; }
+.row { width: 100%; margin-bottom: 10px; }
+label { display:block; margin-bottom: 4px; font-family: 'Oswald', sans-serif; font-size: 1.2em; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+button[type=submit],
+textarea,
+input[type=email],
+input[type=text]{ 
+    border: 1px solid transparent; 
+    width: 100%; 
+    padding: 10px; 
+    color: #000; 
+    background-color: rgba(255,255,255, 0.2); 
+    font-family: 'Merriweather', serif; 
+    font-size: 1.1em;
+    
+    -webkit-transition: background-color 1s ease, color 1s ease;
+    -moz-transition: background-color 1s ease, color 1s ease;
+    -ms-transition: background-color 1s ease, color 1s ease;
+    -o-transition: background-color 1s ease, color 1s ease;
+    transition: background-color 1s ease, color 1s ease; 
+}
+
+textarea { height: 100px; }
+button[type=submit]:hover,
+textarea:focus,
+input[type=email]:focus,
+input[type=text]:focus{ background-color: rgba(255,255,255, 0.5); }
+
+.no-rgba button[type=submit],
+.no-rgba textarea,
+.no-rgba input[type=email],
+.no-rgba input[type=text]{ background-color: #fff; }
+
+.error textarea,
+.error input[type=email],
+.error input[type=text] {  border-color: #fd7f7f; }
+.error ul { 
+    list-style-type: none; 
+    color:#fd7f7f;  
+    margin: 5px 0px 10px; 
+    padding: 0px; 
+}
+
+button[type=submit] { 
+    width: 50%; 
+    float: right; 
+    background-color: #2484c6;
+    color: #fff;
+    font-family: 'Oswald', sans-serif; 
+    margin-top: 20px; 
+    text-transform: uppercase; 
+}
+button[type=submit]:hover { 
+    background-color: #fff;
+    color: #000;
+}
+button[type=submit]:active { border-color: #fff; }
+button[type=submit]:focus,
+button[type=submit]:active { outline:0; }
 
 
 

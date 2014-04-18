@@ -9,7 +9,7 @@ loicolas_main_blog:
     defaults: { _controller: LoicolasMainBundle:Default:experience }
 loicolas_main_contact:
     pattern:  /contact
-    defaults: { _controller: LoicolasMainBundle:Default:experience }
+    defaults: { _controller: LoicolasMainBundle:Default:contact }
 loicolas_main_contact_send:
     pattern:  /contact/send
     defaults: { _controller: LoicolasMainBundle:Default:contactSend }

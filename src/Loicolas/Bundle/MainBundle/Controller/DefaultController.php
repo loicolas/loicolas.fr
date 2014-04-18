@@ -11,6 +11,11 @@ class DefaultController extends Controller
 {
     public function indexAction(Request $request)
     {
+        return $this->render('LoicolasMainBundle:Default:index.html.twig', array());
+    }
+    
+    public function contactAction(Request $request)
+    {
         $contact = new Contact();
        
         $form = $this->createForm(new ContactType($contactSubjects), $contact);
@@ -29,7 +34,7 @@ class DefaultController extends Controller
                 ->setTo( 'loicolas@gmail.com' )
                 ->setBody(
                     $this->renderView(
-                        'LoicolasMainBundle:Default:contact.txt.twig',
+                        'LoicolasMainBundle:Mail:contact.txt.twig',
                         array('contact' => $contact)
                     )
                 )
@@ -37,10 +42,8 @@ class DefaultController extends Controller
                 $this->get('mailer')->send($message);
             
             return $this->redirect($this->generateUrl('loicolas_main_contact_send'));
-            
         }
-        
-        return $this->render('LoicolasMainBundle:Default:index.html.twig', array('form' => $form->createView()));
+        return $this->render('LoicolasMainBundle:Default:contact.html.twig', array('form' => $form->createView()));
     }
     
     public function contactSendAction()
