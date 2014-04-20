@@ -388,6 +388,10 @@ h2 {font-size: 2.1em; font-style:italic;}
     z-index: 90; 
 }
 
+.contact .content {
+        background-image: url('../images/loicolas-contact.jpg');
+}
+
 .main {
     width: 100%;
     margin: 0px auto;  
@@ -517,7 +521,12 @@ html[data-platform*='MacIntel'][data-useragent*='Safari'] .see-more:before {
 }
 
 /** FORM **/
-.contact-form { margin: 40px auto 40px;  width: 480px; text-align:left; }
+.contact-form { 
+    margin: 40px auto 40px;  
+    width: 90%; 
+    max-width: 480px;
+    text-align:left; 
+}
 .row { width: 100%; margin-bottom: 10px; }
 label { display:block; margin-bottom: 4px; font-family: 'Oswald', sans-serif; font-size: 1.2em; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
 button[type=submit],
@@ -541,9 +550,13 @@ input[type=text]{
 
 textarea { height: 100px; }
 button[type=submit]:hover,
+button[type=submit]:focus,
 textarea:focus,
 input[type=email]:focus,
-input[type=text]:focus{ background-color: rgba(255,255,255, 0.5); }
+input[type=text]:focus{ 
+    background-color: rgba(255,255,255, 1); 
+    color: #000
+}
 
 .no-rgba button[type=submit],
 .no-rgba textarea,
@@ -710,6 +723,7 @@ button[type=submit]:active { outline:0; }
         -o-transform: perspective(400px) rotateX(10deg) scale(0.9);
         transform: perspective(200px) rotateX(10deg) scale(0.9);
     }
+    
 }
 
 @media only screen and (min-width: 845px) {

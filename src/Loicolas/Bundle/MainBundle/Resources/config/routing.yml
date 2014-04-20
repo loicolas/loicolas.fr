@@ -3,7 +3,7 @@ loicolas_main_homepage:
     defaults: { _controller: LoicolasMainBundle:Default:index }
 loicolas_main_experience:
     pattern:  /experience
-    defaults: { _controller: LoicolasMainBundle:Default:experience }
+    defaults: { _controller: LoicolasMainBundle:Experience:index }
 loicolas_main_blog:
     pattern:  /blog
     defaults: { _controller: LoicolasMainBundle:Default:experience }
