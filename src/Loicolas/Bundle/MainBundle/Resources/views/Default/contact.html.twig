@@ -1,0 +1,20 @@
+{% extends 'LoicolasMainBundle::layout.html.twig' %}
+{% form_theme form 'LoicolasMainBundle:Default:fields.html.twig' %}
+{% block body_class %}contact{% endblock %}
+{% block body %}
+<article class="presentation">                 
+    <h1>Contactez-moi</h1>
+        {{ form_start(form, {'action': path('loicolas_main_contact'), 'attr': {'class': 'contact-form'} }  ) }}
+            {{ form_errors(form) }}
+
+            {{ form_row(form.firstname) }}
+            {{ form_row(form.name) }}
+            {{ form_row(form.company) }}
+            {{ form_row(form.email) }}
+            {{ form_row(form.message) }}
+            
+            {{ form_rest(form) }}
+        {{ form_end(form) }}
+    
+</article>
+{% endblock %}
