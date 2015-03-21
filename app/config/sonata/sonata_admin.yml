@@ -1,0 +1,69 @@
+sonata_admin:
+    title:      Loicolas
+    title_logo: bundles/loicolasmain/images/logo-admin.png
+    
+    options:
+        html5_validate: false # does not use html5 validation
+        confirm_exit:   true # disable confirmation when quitting with unsaved changes
+    
+    security:
+        handler: sonata.admin.security.handler.role
+
+
+
+    # set to true to persist filter settings per admin module in the user's session
+    persist_filters: true
+    
+    dashboard:
+        groups:
+#            sonata.admin.group.content:
+#                label:           form.label_content
+#                label_catalogue: SonataNewsBundle
+#                icon:            '<i class="fa fa-th"></i>'
+#                items:
+#                    - sonata.news.admin.post
+#                    - sonata.news.admin.comment
+                                                    
+            sonata.admin.group.cv:
+                label:           CV
+                icon:            '<i class="fa fa-th"></i>'
+                items:
+                    - loicolas_main.admin.professional_experience
+                    
+            sonata.admin.group.contact:
+                label:           Contact
+                icon:            '<i class="fa fa-question"></i>'
+                items:
+                    -  loicolas_main.admin.contact
+
+                    
+            sonata.admin.group.media:
+                label:           media
+                label_catalogue: SonataMediaBundle
+                icon:            '<i class="fa fa-picture-o"></i>'
+                items:
+                    - sonata.media.admin.media
+                    - sonata.media.admin.gallery
+                    
+            sonata.admin.group.classification:
+                label:           sonata_classification
+                label_catalogue: SonataClassificationBundle
+                icon:            '<i class="fa fa-sitemap"></i>'
+                items:
+                    - sonata.classification.admin.category
+                    - sonata.classification.admin.tag
+                    - sonata.classification.admin.collection                    
+                    
+            sonata.admin.group.administration:
+                label:           Administration
+                icon:            '<i class="fa fa-cogs"></i>'
+                items:
+                    - loicolas_main.admin.company
+
+            sonata.admin.group.user:
+                label:           users
+                label_catalogue: SonataUserBundle
+                icon:            '<i class="fa fa-users"></i>'
+                items:
+                    - sonata.user.admin.user
+                    - sonata.user.admin.group  
