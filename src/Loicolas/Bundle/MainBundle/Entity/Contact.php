@@ -9,7 +9,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 /**
  * Contact
  *
- * @ORM\Table()
+ * @ORM\Table(name="loicolas__contact")
  * @ORM\Entity(repositoryClass="Loicolas\Bundle\MainBundle\Entity\ContactRepository")
  */
 class Contact
@@ -70,7 +70,7 @@ class Contact
      * @var datetime $created
      *
      * @Gedmo\Timestampable(on="create")
-     * @ORM\Column(type="datetime")
+     * @ORM\Column(name="created_at", type="datetime")
      */
     private $created;
     

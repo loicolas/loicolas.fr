@@ -1,5 +1,5 @@
 services:
-    sonata.admin.contact:
+    loicolas_main.admin.contact:
         class: Loicolas\Bundle\MainBundle\Admin\ContactAdmin
         tags:
             - { name: sonata.admin, manager_type: orm, group: "Contact", label: "Contact" }
@@ -8,3 +8,20 @@ services:
             - Loicolas\Bundle\MainBundle\Entity\Contact
             - ~
 
+    loicolas_main.admin.company:
+        class: Loicolas\Bundle\MainBundle\Admin\CompanyAdmin
+        arguments: [~, Loicolas\Bundle\MainBundle\Entity\Company, SonataAdminBundle:CRUD]
+        tags:
+            - {name: sonata.admin, manager_type: orm, group: admin, label: Company}
+
+    loicolas_main.admin.work_experience:
+        class: Loicolas\Bundle\MainBundle\Admin\WorkExperienceAdmin
+        arguments: [~, Loicolas\Bundle\MainBundle\Entity\WorkExperience, SonataAdminBundle:CRUD]
+        tags:
+            - {name: sonata.admin, manager_type: orm, group: admin, label: Work Experiences}
+
+    loicolas_main.admin.diploma:
+        class: Loicolas\Bundle\MainBundle\Admin\DiplomaAdmin
+        arguments: [~, Loicolas\Bundle\MainBundle\Entity\Diploma, SonataAdminBundle:CRUD]
+        tags:
+            - {name: sonata.admin, manager_type: orm, group: admin, label: Diploma}

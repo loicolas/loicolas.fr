@@ -28,7 +28,8 @@ sonata_admin:
                 label:           CV
                 icon:            '<i class="fa fa-th"></i>'
                 items:
-                    - loicolas_main.admin.professional_experience
+                    - loicolas_main.admin.work_experience
+                    - loicolas_main.admin.diploma
                     
             sonata.admin.group.contact:
                 label:           Contact
