@@ -1,14 +1,14 @@
+parameters:
+        security.acl.permission.map.class: Sonata\AdminBundle\Security\Acl\Permission\AdminPermissionMap
+
 security:
-    acl:
-        connection: default
     encoders:
         FOS\UserBundle\Model\UserInterface: sha512
 
-    role_hierarchy:
+    role_hierarchy:        
+        ROLE_USER:       [ROLE_SONATA_ADMIN]
         ROLE_ADMIN:       [ROLE_USER, ROLE_SONATA_ADMIN]
-        ROLE_SUPER_ADMIN: [ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH]
-        SONATA:
-            - ROLE_SONATA_PAGE_ADMIN_PAGE_EDIT  # if you are using acl then this line must be commented
+        ROLE_SUPER_ADMIN: [ROLE_USER, ROLE_ADMIN, ROLE_SONATA_ADMIN, ROLE_ALLOWED_TO_SWITCH]
 
     providers:
         fos_userbundle:
@@ -25,12 +25,12 @@ security:
             context:            user
             form_login:
                 provider:       fos_userbundle
-                login_path:     /admin/login
+                login_path:     /login
                 use_forward:    false
                 check_path:     /admin/login_check
                 failure_path:   null
             logout:
-                path:           /admin/logout
+                path:           /logout
             anonymous:          true
 
         # This firewall is used to handle the public login area
@@ -63,3 +63,6 @@ security:
         # Change these rules to adapt them to your needs
         - { path: ^/admin/, role: [ROLE_ADMIN, ROLE_SONATA_ADMIN] }
         - { path: ^/.*, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        
+    acl:
+        connection: default

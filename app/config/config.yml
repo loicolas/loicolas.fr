@@ -1,9 +1,10 @@
 imports:
     - { resource: parameters.yml }
     - { resource: security.yml }
-    - { resource: sonata_news.yml }
-    - { resource: sonata_media.yml }
-    - { resource: sonata_formater.yml }
+    - { resource: sonata/sonata_admin.yml }
+    - { resource: sonata/sonata_news.yml }
+    - { resource: sonata/sonata_media.yml }
+    - { resource: sonata/sonata_formater.yml }
     - { resource: "@LoicolasMainBundle/Resources/config/admin.yml" }
 
 framework:
@@ -86,23 +87,14 @@ sonata_block:
             contexts:   [admin]
         sonata.admin.block.search_result:
             contexts:   [admin]
-        # Your other blocks
-        sonata.user.block.menu:
+        # Builtin Block
+        sonata.block.service.text:
+        sonata.block.service.container:
+        sonata.block.service.rss:
+        sonata.block.service.menu:
+        sonata.block.service.template: 
         
-sonata_admin:
-    title:      Loicolas
-    title_logo: bundles/loicolasmain/images/logo-admin.png
-    
-    security:
-        handler: sonata.admin.security.handler.role
-        acl_user_manager: fos_user.user_manager # Name of the user manager service used to retrieve ACL users
 
-    options:
-        html5_validate: false # does not use html5 validation
-        confirm_exit:   false # disable confirmation when quitting with unsaved changes
-
-    # set to true to persist filter settings per admin module in the user's session
-    persist_filters: true
     
 sonata_user:
     security_acl: true
