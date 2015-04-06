@@ -10,13 +10,13 @@
         <title>{% block title %}Loïc Colas{% endblock %}</title>
         
         <meta property="fb:admins" content="1009745838" />
-        <meta property="og:description" content="Loïc Colas - Responsive web developer" />
+        <meta property="og:description" content="Loïc Colas - Technical lead developer in Luxembourg" />
         
         <meta property="og:image" content="{{ app.request.uriForPath('/bundles/loicolasmain/images/loicolas-facebook-share.png') }}" />
-        <meta property="og:title" content="Loïc Colas - Responsive web developer" />
+        <meta property="og:title" content="Loïc Colas - Technical lead developer in Luxembourg" />
         <meta property="og:url" content="http://www.loicolas.fr" />
         
-        <meta name="description" content="Loïc Colas - Responsive web developer for Backend and Frontend development and team leading">
+        <meta name="description" content="Loïc Colas - Technical lead developer for Backend and Frontend development and team leading in Luxembourg">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         {% block stylesheets %}
             <link href='http://fonts.googleapis.com/css?family=Merriweather:400,700,400italic,700italic,900italic,900,300italic,300|Oswald:400,300,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
@@ -103,8 +103,14 @@
         {% block javascripts %}
             {% javascripts 
                             'bundles/loicolasmain/js/vendor/jquery-1.10.1.min.js'
+                            
+                            'bundles/loicolasmain/js/vendor/caroufredsel/jquery.mousewheel.min.js'
+                            'bundles/loicolasmain/js/vendor/caroufredsel/jquery.touchSwipe.min.js'
+                            'bundles/loicolasmain/js/vendor/caroufredsel/jquery.ba-throttle-debounce.min.js'
+                            'bundles/loicolasmain/js/vendor/caroufredsel/jquery.transit.min.js'
+                            'bundles/loicolasmain/js/vendor/caroufredsel/jquery.carouFredSel-6.2.1-packed.js'
                             'bundles/loicolasmain/js/main.js'  %}
-                    <script src="{{ asset_url }}"></script>
+                    <script src="{{ asset_url }}"></script>                  
             {% endjavascripts %}
         {% endblock %}
         {#

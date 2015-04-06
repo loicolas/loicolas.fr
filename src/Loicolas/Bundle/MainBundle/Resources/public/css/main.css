@@ -545,6 +545,35 @@ html[data-platform*='MacIntel'][data-useragent*='Safari'] .see-more:before {
     transform: scale(1.2);
 }
 
+
+
+/** CAROUSEL **/
+.carousel-item {
+    float: left;
+    display: block;
+    overflow: hidden;
+}
+
+.carousel-previous,
+.carousel-next {
+    position: absolute;
+    top: 45%;
+    height: 32px;
+    width: 32px;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    
+    background-color: #000;
+    color: #fff;
+}
+
+.carousel-previous{
+    left: 0;
+}
+.carousel-next {
+    right: 0;
+}
+
 /** FORM **/
 .contact-form { 
     margin: 40px auto 40px;  
@@ -860,6 +889,10 @@ button[type=submit]:active { outline:0; }
 
 .clearfix {
     *zoom: 1;
+}
+
+.no-list-style {
+    list-style: none;
 }
 
 /* ==========================================================================

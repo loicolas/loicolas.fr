@@ -2,9 +2,9 @@ parameters:
 #    loicolas_main.example.class: Loicolas\Bundle\MainBundle\Example
 
 services:
-    loicolas_main.professional_experience_manager:
-        class: Loicolas\Bundle\MainBundle\Entity\ProfessionalExperienceManager
-        arguments: [Loicolas\Bundle\MainBundle\Entity\ProfessionalExperience, @doctrine]
+    loicolas_main.work_experience_manager:
+        class: Loicolas\Bundle\MainBundle\Entity\WorkExperienceManager
+        arguments: [Loicolas\Bundle\MainBundle\Entity\WorkExperience, @doctrine]
 
     loicolas_main.company_manager:
         class: Loicolas\Bundle\MainBundle\Entity\CompanyManager

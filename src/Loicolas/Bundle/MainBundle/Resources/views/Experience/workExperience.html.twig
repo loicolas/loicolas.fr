@@ -1,0 +1,54 @@
+{% block body %}
+{% set linkedin_url =  "https://www.linkedin.com/profile/view?trk=nav_responsive_tab_profile_pic&id=144737275#background-projects" %}
+<section class="work-experience" id="work-experience">
+    <h2 class="visuallyhidden">Expérience professionnel de Loïc Colas</h2>
+        {% if experiences %}
+        <ol class="carousel no-list-style">
+            {% for experience in experiences %}
+            <li class="carousel-item">
+                <div class="wrapper">
+                    <h3>{{ experience.title }}</h3>
+                    {% if experience.company %}
+                        {% if experience.company.url %}
+                            <a href="{{ experience.company.url }}" target="_blank" class="company" >{{ experience.company.name }}</a>
+                        {% else %}
+                            <span class="company">{{ experience.company.name }}</span>
+                        {% endif %}
+                    {% endif %}
+                    {% if experience.endAt %}
+                         <div class="date start-date">
+                            <span class="label">de</span>
+                            <span class="month">{{ experience.startAt | format_date('MMM' ) }}</span> {{ experience.startAt | date('Y') }}
+                        </div>
+                        <div class="date end-date">
+                                <span class="label">à</span>
+                                <span class="month">{{ experience.endAt | format_date('MMM') }}</span> {{ experience.endAt | date('Y') }}
+                        </div>
+                    {% else %}
+                        <div class="date start-date">
+                            <span class="label">depuis</span>
+                            <span class="month">{{ experience.startAt | format_date('MMM') }}</span> {{ experience.startAt | date('Y') }}
+                        </div>
+                    {% endif %}
+                        
+                   
+                    <h3>Missions</h3>
+                    <ul class="missions">
+                        <li>Manager du pôle développeur</li>
+                        <li>Gestion du planning et allocation de ressources</li>
+                        <li>Mise en place de tests techniques</li>
+                        <li>Expert frontend</li>
+                        <li>Expert Symfony</li>
+                        <li>Réalisation de site internet, applications web et e-shop</li>
+                    </ul>
+                    <a href="{{ linkedin_url }}" target="_blank">Voir mes réalisations</a>    
+                </div>
+            </li>   
+            {% endfor %}
+        </ol>
+        <a class="carousel-next"><span class="hidden">suivant</span></a>
+        <a class="carousel-previous"><span class="hidden">précédent</span></a>
+        {% endif %}        
+</section>
+    
+{% endblock %}

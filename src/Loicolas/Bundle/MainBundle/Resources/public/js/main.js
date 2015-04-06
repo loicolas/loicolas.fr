@@ -16,5 +16,23 @@
                 $body.addClass(class_menu_open);
             }
         });
+        
+        if( $(".carousel").length ){
+           $(".carousel").carouFredSel({
+                responsive: true,
+                width: '100%',
+                circular: false,            
+                infinite: false,
+                transition: true,
+                onWindowResize: "debounce",
+                items: {
+                    start: -1
+                },
+                swipe: {
+                    onTouch: true
+                }
+            }); 
+        }
+        
     });
 })(jQuery);

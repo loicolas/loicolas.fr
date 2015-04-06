@@ -10,4 +10,14 @@ class ExperienceController extends Controller
     {
         return $this->render('LoicolasMainBundle:Experience:index.html.twig');
     }
+    
+    public function workExperienceAction()
+    {
+        $workExperienceManager  = $this->get('loicolas_main.work_experience_manager');
+        $workExperiences = $workExperienceManager->getForCV();
+        
+        return $this->render('LoicolasMainBundle:Experience:workExperience.html.twig', array(
+            'experiences' => $workExperiences
+        ));
+    }
 }

@@ -1,11 +1,9 @@
 {% extends 'LoicolasMainBundle::layout.html.twig' %}
 {% block body_class %}experience{% endblock %}
 {% block body %}
-<section class="expereince-list">
-    <h1>Expérience professionnel de Loïc Colas</h1>
-    <article>
-        
-    </article>
-</section>
-    
+{% set linkedin_url =  "https://www.linkedin.com/profile/view?trk=nav_responsive_tab_profile_pic&id=144737275#background-projects" %}
+    <h1 class="visuallyhidden">Loïc Colas, technical lead developer expérimenté</h1>
+    {{ render(controller(
+        'LoicolasMainBundle:Experience:workExperience'
+    )) }}
 {% endblock %}
